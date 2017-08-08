@@ -12,6 +12,8 @@ import io.bxbxbai.zhuanlan.ui.AllPeopleActivity;
 import io.bxbxbai.zhuanlan.ui.RecentPostListActivity;
 
 /**
+ * 导航栏下面菜单按钮的点击监听事件，继承OnItemClickListener
+ * 实际是对一个listview项目的监听，监听listview的item点击事件
  *
  * 点击事件
  * @author bxbxbai
@@ -30,6 +32,7 @@ public class OnMenuListClickListener implements AdapterView.OnItemClickListener 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         DrawerMenuContent.DrawerItem item = (DrawerMenuContent.DrawerItem) view.getTag(R.id.key_data);
 
+//        点击导航栏中的某一项之后，关闭导航栏
         if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawers();
         }

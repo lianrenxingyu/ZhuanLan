@@ -68,19 +68,26 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_entry);
         mSplashImage = ButterKnife.findById(this, R.id.iv_entry);
         titleView = ButterKnife.findById(this, R.id.tv_title);
-
+//      随机获取
         Random r = new Random(SystemClock.elapsedRealtime());
         mSplashImage.setImageResource(SPLASH_ARRAY[r.nextInt(SPLASH_ARRAY.length)]);
 //        mSplashImage.setImageResource(SPLASH_ARRAY[15]);
         animateImage();
+
+//        下面的模糊化效果没有成功
 //        applyBlur();
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
     }
 
     private void animateImage() {
+//          ObjectAnimator 是一个动画类，ofFloat是它的一个静态工厂方法，
+//          第一个参数是操纵的控件，第二个参数是何种动画属性，最后是一个可变参数，表示具体缩放值，或者旋转角度等
+
+//          这里表示，X轴和Y轴的缩放动画
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(mSplashImage, View.SCALE_X, 1f, SCALE_END);
         ObjectAnimator animatorY = ObjectAnimator.ofFloat(mSplashImage, View.SCALE_Y, 1f, SCALE_END);
 
+//        AnimatorSet 属性动画集合，可以同时播放一系列属性动画
         AnimatorSet set = new AnimatorSet();
         set.setDuration(ANIMATION_DURATION).play(animatorX).with(animatorY);
         set.start();
@@ -88,6 +95,7 @@ public class SplashActivity extends Activity {
         set.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
+//                开始新的应用的主界面activity
                 MainActivity.start(SplashActivity.this);
                 SplashActivity.this.finish();
             }
@@ -95,6 +103,8 @@ public class SplashActivity extends Activity {
     }
 
     //http://blog.jobbole.com/63894/
+
+//    模糊化效果
     private void applyBlur() {
         mSplashImage.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
@@ -131,7 +141,7 @@ public class SplashActivity extends Activity {
         rs.destroy();
         StopWatch.log(System.currentTimeMillis() - startMs + "ms");
     }
-
+//虚化方法，没有被实现
     private void blur2(Bitmap bkg, View view) {
         long startMs = System.currentTimeMillis();
         float scaleFactor = 1;

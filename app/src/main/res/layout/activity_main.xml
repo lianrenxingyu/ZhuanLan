@@ -5,6 +5,7 @@
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <!--LinerLayout是主界面部分，包含了toolbar和内容布局，内容布局用了帧布局，可以后面加入fragmentlayout-->
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -15,12 +16,13 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
+        <!--这个主要部分是一个帧布局，可以用fragment添加进去-->
         <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:id="@+id/container"/>
     </LinearLayout>
+    <!--这是一个navigationView，这个是把抽屉布局的内容包含进来了-->
     <include layout="@layout/drawer_view"/>
 </android.support.v4.widget.DrawerLayout>

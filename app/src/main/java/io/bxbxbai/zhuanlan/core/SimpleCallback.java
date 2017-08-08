@@ -7,6 +7,8 @@ import retrofit2.Response;
 
 /**
  * Created by xuebin on 15/12/16.
+ *
+ * 抽象类，重写抽象方法onResponse
  */
 public abstract class SimpleCallback<T> implements Callback<T> {
 
@@ -25,6 +27,7 @@ public abstract class SimpleCallback<T> implements Callback<T> {
     }
 
     /**
+     *抽象类 这是一个必须实现的抽象方法，onResponse
      * on response return
      *
      * @param result result

@@ -10,9 +10,12 @@ import io.bxbxbai.zhuanlan.R;
 import java.util.List;
 
 /**
- *
+ *DrawerMenuContent.DrawerItem 类型作为list列表的的类型，这个也代表了适配器所要适配的类型
  * @author bxbxbai
+ *
+ * 继承于一个基于simpleAdapter的自定义类
  */
+
 public class MenuAdapter extends SimpleBaseAdapter<DrawerMenuContent.DrawerItem> {
 
 

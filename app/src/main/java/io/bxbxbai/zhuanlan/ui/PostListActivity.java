@@ -31,6 +31,8 @@ import java.util.List;
 
 /**
  * @author bxbxbai
+ *
+ * 某一个人的主页
  */
 public class PostListActivity extends BaseActivity {
 
@@ -47,12 +49,16 @@ public class PostListActivity extends BaseActivity {
     @Bind(R.id.collapsing_toolbar)
     protected CollapsingToolbarLayout collapsingToolbarLayout;
 
+//    名字
     @Bind(R.id.tv_name)
     protected TextView nameView;
+//
     @Bind(R.id.tv_bio)
     protected TextView bioView;
+//    自我描述
     @Bind(R.id.tv_description)
     protected TextView descriptionView;
+//    头像
     @Bind(R.id.iv_avatar)
     protected ImageView avatarView;
 
@@ -67,6 +73,7 @@ public class PostListActivity extends BaseActivity {
         ButterKnife.bind(this);
 
 //        collapsingToolbarLayout.setContentScrim(new BitmapDrawable());
+//        获得上下滑动事件的监听
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {

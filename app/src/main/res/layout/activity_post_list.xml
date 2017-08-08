@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--使得布局协调，一个强化版的framelayout，实现一些遮挡，移动功能-->
 <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:background="@android:color/white"
         android:layout_height="match_parent">
+    <!--可以监听控件的动作，根据事件动作对toolbar做出反应-->
     <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/app_bar">
+        <!--可折叠标题栏-->
         <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"

@@ -2,6 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+    <!--scaleType 说明一张图片的大小范围适配的类型，fitXY是填充慢XY轴
+        这个属性是用来调整图片的大小，不同属性不同效果出来图片
+    -->
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,6 +37,12 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="50dp"
             android:text="专栏App"/>
+    <!--
+        layout_alignParentBottom align对齐，parent容器（父容器），底部，
+        这个属性的意义是，是否对齐容器的底部
+        layout_marginBottom   margin 边缘，距离最近的容器的边缘，这里是距离底部
+        layout_below    在相对布局中，指定所在控件位于什么控件下方
+        -->
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

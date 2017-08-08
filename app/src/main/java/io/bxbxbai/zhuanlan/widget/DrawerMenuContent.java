@@ -13,18 +13,27 @@ import java.util.List;
 /**
  * Created by baia on 15/3/28.
  *
+ * 右侧导航抽屉中菜单内容 ，其中DrawerItem是每一个小项目
+ *
  * @author bxbxbai
  */
 public class DrawerMenuContent {
 
     public static final int DRAWER_MENU_COUNT = 3;
 
+//    每一个小标题和图标
     private static final String FIELD_TITLE = "title";
     private static final String FIELD_ICON = "icon";
 
     private List<DrawerItem> items;
+
+//    class类是经常和反射功能一起使用的，class类能获得类的各种信息
     private Class[] activities;
 
+    /**
+     * 这个传入参数好像没有卵用，暂时不知道用处
+     * @param context
+     */
     public DrawerMenuContent(Context context) {
         activities = new Class[DRAWER_MENU_COUNT];
         items = new ArrayList<>(DRAWER_MENU_COUNT);
@@ -46,6 +55,7 @@ public class DrawerMenuContent {
         return items;
     }
 
+//    返回具体一个activity类信息
     public Class getActivity(int pos) {
         if (0 <= pos && pos < activities.length) {
             return activities[pos];
@@ -53,7 +63,7 @@ public class DrawerMenuContent {
         return null;
     }
 
-
+// 返回所请求“类”的在数组的位置信息
     public int getPosition(Class clazz) {
         for (int i = 0; i < activities.length; i++) {
             if (activities[i].equals(clazz)) {

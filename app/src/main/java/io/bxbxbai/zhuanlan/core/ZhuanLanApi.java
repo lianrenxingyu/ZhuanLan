@@ -10,6 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @author bxbxbai
+ *
+ * 简单来讲就是实例化retrofit，并retrofit.create(class)返回api实例
  */
 public final class ZhuanLanApi {
 
@@ -58,14 +60,15 @@ public final class ZhuanLanApi {
 
     private Retrofit retrofit;
 
+//    获取一个retrofit的实例
     private ZhuanLanApi() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(ZHUAN_LAN_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())//添加转化factory
 //                .client(createHttpClient())
                 .build();
     }
-
+//  retrofit.create(class)返回一个api的实例
     public static <T> T api(Class<T> clazz) {
         return instance.retrofit.create(clazz);
     }

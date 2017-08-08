@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    这仅仅是导航界面，不包括抽屉部分
+    导航视图，navigation,导航
+    导航视图，有时好像也被译为抽屉，包含两个部分，一部分是头部，一部分是列表
+
+    elevation 设置该组件“浮”起来的高度，通过设置该属性可以让该组件呈现3D效果
+-->
 <android.support.design.widget.NavigationView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,6 +16,11 @@
         app:headerLayout="@layout/drawer_header"
         app:elevation="3dp"
         app:insetForeground="#4000">
+
+    <!--
+        listSelector 选择列表项被选中时的颜色
+        drawSelectorOnTop 背景色是否在文字上面，true，在文字上面，false，文字始终在上面
+    -->
     <ListView
         android:id="@+id/drawer_list"
         android:layout_marginTop="200dp"

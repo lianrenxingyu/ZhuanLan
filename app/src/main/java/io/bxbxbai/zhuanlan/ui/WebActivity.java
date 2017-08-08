@@ -104,6 +104,15 @@ public class WebActivity extends BaseActivity {
         wm.addView(view, wmParams);
     }
 
+    /**
+     * 这些参数的意义是什么？？？？暂时不知道
+     *
+     * @param activity
+     * @param url
+     * @param title
+     * @return
+     */
+
     public static boolean start(Activity activity, String url, String title) {
         Intent intent = new Intent();
         intent.setClass(activity, WebActivity.class);

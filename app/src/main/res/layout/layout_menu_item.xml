@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--导航栏中listView的一个item的布局，
+    基本就是textview加一个imageview
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"

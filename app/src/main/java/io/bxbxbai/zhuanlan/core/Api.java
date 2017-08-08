@@ -11,6 +11,7 @@ import retrofit2.http.Query;
 
 /**
  * Created by xuebin on 15/12/19.
+ * retrofit的网络请求
  */
 public interface Api {
 
@@ -22,5 +23,6 @@ public interface Api {
 
     @GET("/api/columns/{id}")
     Call<User> getUser(@Path("id") String id);
+
 
 }

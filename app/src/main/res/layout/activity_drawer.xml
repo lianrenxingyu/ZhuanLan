@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--这是一个抽屉布局-->
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"

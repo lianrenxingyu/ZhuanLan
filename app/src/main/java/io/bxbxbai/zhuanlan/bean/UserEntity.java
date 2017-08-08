@@ -10,28 +10,34 @@ import orm.db.enums.AssignType;
 
 /**
  * Created by xuebin on 15/9/21.
+ *
+ * 用户实体类，具有许多的用户属性字段，
+ * 实现了序列化保存
+ *
+ * 这是一个可以用来存入orm数据库的类
  */
 @Table("_user")
 public class UserEntity implements Parcelable {
 
+
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     @Column("_id")
-    public int id;
+    public int id;//主键
 
     @Column("followersCount")
-    private int followerCount;
+    private int followerCount;//关注人数量
 
     @Column("description")
-    private String description;
+    private String description;//描述，简述
 
     @Column("avatarId")
-    private String avatarId;
+    private String avatarId;//头像（不知道是不是这个意思），另外译为阿凡达
 
     @Column("avatarTemplate")
-    private String avatarTemplate;
+    private String avatarTemplate;//
 
     @Column("authorName")
-    private String authorName;
+    private String authorName;//作者名字
 
     @Unique
     @Column("href")
@@ -138,6 +144,7 @@ public class UserEntity implements Parcelable {
         return 0;
     }
 
+//    parcelable序列化，把要序列化的变量写入parcel容器
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.id);
@@ -156,6 +163,8 @@ public class UserEntity implements Parcelable {
     public UserEntity() {
     }
 
+//    保护型构造函数，不知道目的？？这个构造函数可以用于下面的Creator方法
+//    读入序列化对象，具有顺序的读入，
     protected UserEntity(Parcel in) {
         this.id = in.readInt();
         this.followerCount = in.readInt();
@@ -169,7 +178,7 @@ public class UserEntity implements Parcelable {
         this.url = in.readString();
         this.postCount = in.readInt();
     }
-
+//序列化重写的方法，CREATOR变量名字不能变
     public static final Parcelable.Creator<UserEntity> CREATOR = new Parcelable.Creator<UserEntity>() {
         @Override
         public UserEntity createFromParcel(Parcel source) {

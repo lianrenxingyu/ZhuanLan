@@ -12,6 +12,19 @@
             android:label="@string/app_name"
             android:allowBackup="true"
             android:theme="@style/AppTheme">
+        <!--label 属性定义当前APP的标题栏文字-->
+        <!--screenOrientation 具有两个常用属性
+            landscape 设置为横向
+            portrait 设置为纵向
+
+            AppTheme.FullScreen 设置全屏
+
+           configChanges 屏幕方向和键盘隐藏的变化不会导致activity的重新建立，
+            在这种情况下，只会执行onConfigurationChanged方法
+            默认情况下回销毁当前activity，然后从onCreate重新建立activity
+
+         -->
+
         <activity
                 android:name=".ui.SplashActivity"
                 android:alwaysRetainTaskState="true"
@@ -24,7 +37,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <!--
+            alwaysRetainTaskState 保持任务栈的状态，在变为后台应用后，保持task不被清空
+            相关属性不是很清楚
+        -->
         <activity
                 android:name=".ui.MainActivity"
                 android:alwaysRetainTaskState="true"

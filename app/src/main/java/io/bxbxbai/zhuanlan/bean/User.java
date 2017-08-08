@@ -3,7 +3,7 @@ package io.bxbxbai.zhuanlan.bean;
 import com.google.gson.annotations.SerializedName;
 
 /**
- *
+ * retrofit的网络请求类，同时可用于Gson解析json数据
  * @author bxbxbai
  */
 public class User {
